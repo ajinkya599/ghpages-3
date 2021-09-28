@@ -30,6 +30,7 @@ jobs:
           CLEAN: true
       - name: Enable GitHub Pages
         uses: actions/github-script@v4
+        continue-on-error: true # API fails when the GitHub pages is already deployed
         with:
           github-token: '${{ secrets.GH_PAT }}'
           script: |
